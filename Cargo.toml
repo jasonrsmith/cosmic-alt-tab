@@ -1,0 +1,22 @@
+[package]
+name = "cosmic-alt-tab"
+version = "0.1.0"
+edition = "2021"
+description = "Popup-free, MRU Alt+Tab with a hold-to-show picker for the COSMIC desktop"
+license = "MIT"
+repository = "https://github.com/jasonrsmith/cosmic-alt-tab"
+
+[dependencies]
+wayland-client = "0.31"
+cosmic-protocols = { git = "https://github.com/pop-os/cosmic-protocols", default-features = false, features = ["client"] }
+wayland-protocols = { version = "0.32", features = ["client", "staging"] }
+wayland-protocols-wlr = { version = "0.3", features = ["client"] }
+rustix = { version = "1", features = ["event", "fs"] }
+resvg = "0.49.0"
+fontdue = "0.9.5"
+tiny-skia = { version = "0.12", features = ["png-format"] }
+
+[profile.release]
+opt-level = 3
+lto = "thin"
+strip = true

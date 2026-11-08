@@ -1,0 +1,9 @@
+// Merge these into ~/.config/cosmic/com.system76.CosmicSettings.Shortcuts/v1/custom
+// (inside the top-level { ... }). Replace /home/YOU with your home directory.
+// Write the file atomically (temp file + mv): COSMIC rejects a half-written file.
+{
+    (modifiers: [Alt], key: "Tab", description: Some("cosmic-alt-tab next")): Spawn("/home/YOU/.local/bin/cosmic-alt-tab next"),
+    (modifiers: [Alt, Shift], key: "Tab", description: Some("cosmic-alt-tab prev")): Spawn("/home/YOU/.local/bin/cosmic-alt-tab prev"),
+    // Optional: keep COSMIC's own switcher on Super+Tab.
+    (modifiers: [Super], key: "Tab", description: Some("Window switcher (popup)")): System(WindowSwitcher),
+}
